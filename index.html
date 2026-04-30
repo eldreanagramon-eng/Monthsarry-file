@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    text-align: center;
+    color: #333;
+}
+
+/* Glass cards */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 15px;
+    width: 85%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Hidden */
+.hidden { display: none; }
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff1e4d;
+    transform: scale(1.05);
+}
+
+/* Inputs */
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Images */
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Headings */
+h1, h2 {
+    color: #ff2e63;
+}
+
+p {
+    line-height: 1.5;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+<div id="login" class="container">
+    <h2>Enter Monthsary 💌</h2>
+    <input type="password" id="password">
+    <br><br>
+    <button onclick="checkPassword()">Enter</button>
+    <p id="error"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main" class="hidden">
+
+    <div class="container">
+        <h1>Hi Lablab ❤️</h1>
+        <p>Happy Monthsary!</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="container">
+        <h2>Our Journey</h2>
+
+        <p><b>Struggles:</b><br>
+        “Our journey hasn’t been easy. We’ve had misunderstandings, arguments, and times when things felt really hard. But even through all that, I still choose you every single day.”</p>
+
+        <p><b>Promise:</b><br>
+        “I may not be perfect, and I know we’ll still face challenges, but I promise to keep choosing you, again and again.”</p>
+
+        <p><b>Final Message:</b><br>
+        “Happy Monthsary, love. Thank you for staying, for loving me, and for not giving up on us. I love you.”</p>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="container">
+        <h2>Our Memories 📸</h2>
+        <img src="DSCF1288.JPG">
+        <img src="DSCF9612.jpg">
+        <img src="_SCF9930.jpg">
+    </div>
+
+    <!-- RANDOM LOVE MESSAGE -->
+    <div class="container">
+        <h2>Click this 💖</h2>
+        <button onclick="showLove()">Tap me</button>
+        <p id="loveMessage"></p>
+    </div>
+
+    <!-- SECRET BUTTON -->
+    <div class="container">
+        <button onclick="showSecret()">Secret 👀</button>
+    </div>
+
+</div>
+
+<!-- SECRET PAGE -->
+<div id="secret" class="hidden container">
+    <h1>I love you ♾️</h1>
+
+    <p>
+    I will always choose you, lablab. I love you so much. I hope we become better for each other in the future.  
+    I may not be my best version yet, but in time, I will love you even deeper and more surely.  
+    You are the one I want to marry and build a future with. Thank you for everything.  
+    I LOVE YOU INFINITY 💖
+    </p>
+</div>
+
+<script>
+
+// PASSWORD
+function checkPassword() {
+    let pass = document.getElementById("password").value;
+
+    if (pass === "030124") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("main").classList.remove("hidden");
+    } else {
+        document.getElementById("error").innerText = "Wrong password 😢";
+    }
+}
+
+// RANDOM MESSAGES
+let messages = [
+"I love you more every day ❤️",
+"You make my life better 💖",
+"I’ll always choose you ♾️",
+"You’re my favorite person 🫶"
+];
+
+function showLove() {
+    let random = messages[Math.floor(Math.random() * messages.length)];
+    document.getElementById("loveMessage").innerText = random;
+}
+
+// SECRET PAGE
+function showSecret() {
+    document.getElementById("main").style.display = "none";
+    document.getElementById("secret").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
